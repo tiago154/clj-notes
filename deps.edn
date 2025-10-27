@@ -6,4 +6,6 @@
         :run-fn {:jvm-opts ["-Dfile.encoding=UTF-8"]
               :main-opts ["-m" "examples.functions"]}
         :run-seq {:jvm-opts ["-Dfile.encoding=UTF-8"]
-            :main-opts ["-m" "examples.sequences"]}}}
+            :main-opts ["-m" "examples.sequences"]}
+        :lint {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2023.12.15"}}
+            :main-opts ["-m" "clj-kondo.main" "--lint" "src"]}}}

@@ -38,7 +38,18 @@ O arquivo `deps.edn` possui aliases para facilitar:
 clj -M:run-data
 clj -M:run-fn
 clj -M:run-seq
+clj -M:lint
 ```
+
+### Verificar o código com lint
+
+O alias `lint` usa [clj-kondo](https://github.com/clj-kondo/clj-kondo) para analisar os arquivos em `src`:
+
+```bash
+clj -M:lint
+```
+
+O primeiro uso baixa o binário do clj-kondo automaticamente pelo Maven.
 
 ### Explorar no REPL
 
