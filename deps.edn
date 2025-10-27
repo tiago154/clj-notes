@@ -1,0 +1,9 @@
+{:paths ["src"]
+ :aliases {:repl {:jvm-opts ["-Dfile.encoding=UTF-8"]
+            :main-opts ["-m" "clojure.main"]}
+        :run-data {:jvm-opts ["-Dfile.encoding=UTF-8"]
+             :main-opts ["-m" "examples.data-structures"]}
+        :run-fn {:jvm-opts ["-Dfile.encoding=UTF-8"]
+              :main-opts ["-m" "examples.functions"]}
+        :run-seq {:jvm-opts ["-Dfile.encoding=UTF-8"]
+            :main-opts ["-m" "examples.sequences"]}}}
