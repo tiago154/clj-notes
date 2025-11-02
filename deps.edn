@@ -7,5 +7,7 @@
               :main-opts ["-m" "examples.functions"]}
         :run-seq {:jvm-opts ["-Dfile.encoding=UTF-8"]
             :main-opts ["-m" "examples.sequences"]}
+        :run-basic {:jvm-opts ["-Dfile.encoding=UTF-8"]
+              :main-opts ["-m" "examples.basic-functions"]}
         :lint {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2023.12.15"}}
             :main-opts ["-m" "clj-kondo.main" "--lint" "src"]}}}

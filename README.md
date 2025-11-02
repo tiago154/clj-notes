@@ -9,6 +9,7 @@ clj-notes/
 ├── deps.edn
 └── src/
     └── examples/
+        ├── basic_functions.clj   ; operações básicas, aritmética, comparações
         ├── data_structures.clj   ; operações com vetores, mapas e sets
         ├── functions.clj         ; funções de ordem superior e utilidades
         └── sequences.clj         ; sequências, lazy, destructuring
@@ -25,6 +26,7 @@ Você pode adicionar mais arquivos dentro de `src/examples` seguindo o mesmo pad
 ### Rodar tudo de um arquivo específico
 
 ```bash
+clj -M -m examples.basic-functions
 clj -M -m examples.data-structures
 clj -M -m examples.functions
 clj -M -m examples.sequences
@@ -35,6 +37,7 @@ clj -M -m examples.sequences
 O arquivo `deps.edn` possui aliases para facilitar:
 
 ```bash
+clj -M:run-basic
 clj -M:run-data
 clj -M:run-fn
 clj -M:run-seq
@@ -62,6 +65,9 @@ clj
 Dentro do REPL carregue o namespace desejado e execute as funções expondo exemplos isolados:
 
 ```clojure
+(require 'examples.basic-functions)
+(examples.basic-functions/demo-arithmetic)
+
 (require 'examples.data-structures)
 (examples.data-structures/demo-maps)
 
