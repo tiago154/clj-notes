@@ -1,21 +1,26 @@
 # Clojure Notes
 
-Coleção simples de exemplos em Clojure para consulta rápida sobre estruturas de dados, funções utilitárias e manipulação de sequências.
+Coleção de exemplos em Clojure para consulta rápida sobre estruturas de dados, funções utilitárias e desafios práticos de programação.
 
-## Estrutura sugerida
+## Estrutura do projeto
 
 ```
 clj-notes/
 ├── deps.edn
 └── src/
-    └── examples/
-        ├── basic_functions.clj   ; operações básicas, aritmética, comparações
-        ├── data_structures.clj   ; operações com vetores, mapas e sets
-        ├── functions.clj         ; funções de ordem superior e utilidades
-        └── sequences.clj         ; sequências, lazy, destructuring
+    ├── examples/         ; exemplos básicos por tópico
+    │   ├── basic_functions.clj   ; operações básicas, aritmética, comparações
+    │   ├── data_structures.clj   ; operações com vetores, mapas e sets
+    │   ├── functions.clj         ; funções de ordem superior e utilidades
+    │   └── sequences.clj         ; sequências, lazy, destructuring
+    └── challenges/       ; desafios práticos usando múltiplos conceitos
+        └── order_processing.clj  ; sistema de processamento de pedidos
 ```
 
-Você pode adicionar mais arquivos dentro de `src/examples` seguindo o mesmo padrão. Cada namespace possui uma função `-main` que executa os exemplos do arquivo.
+### Examples vs Challenges
+
+- **examples/**: Exemplos isolados de conceitos específicos da linguagem
+- **challenges/**: Problemas práticos que combinam múltiplos conceitos em cenários realistas
 
 ## Pré-requisitos
 
@@ -23,7 +28,7 @@ Você pode adicionar mais arquivos dentro de `src/examples` seguindo o mesmo pad
 
 ## Executando os exemplos
 
-### Rodar tudo de um arquivo específico
+### Rodar exemplos básicos por tópico
 
 ```bash
 clj -M -m examples.basic-functions
@@ -32,15 +37,31 @@ clj -M -m examples.functions
 clj -M -m examples.sequences
 ```
 
+### Rodar desafios práticos
+
+```bash
+clj -M -m challenges.order-processing
+```
+
 ### Usando aliases prontos (opcional)
 
 O arquivo `deps.edn` possui aliases para facilitar:
 
+**Exemplos:**
 ```bash
-clj -M:run-basic
-clj -M:run-data
-clj -M:run-fn
-clj -M:run-seq
+clj -M:run-basic    # basic functions
+clj -M:run-data     # data structures
+clj -M:run-fn       # functions
+clj -M:run-seq      # sequences
+```
+
+**Desafios:**
+```bash
+clj -M:challenge-orders  # processamento de pedidos
+```
+
+**Linting:**
+```bash
 clj -M:lint
 ```
 
@@ -62,8 +83,9 @@ Para abrir um REPL interativo:
 clj
 ```
 
-Dentro do REPL carregue o namespace desejado e execute as funções expondo exemplos isolados:
+Dentro do REPL carregue o namespace desejado e execute as funções:
 
+**Exemplos básicos:**
 ```clojure
 (require 'examples.basic-functions)
 (examples.basic-functions/demo-arithmetic)
@@ -75,4 +97,14 @@ Dentro do REPL carregue o namespace desejado e execute as funções expondo exem
 (examples.functions/demo-reduce)
 ```
 
-Adicione mais funções e exemplos conforme aprender novos recursos. Manter os exemplos curtos e temáticos ajuda a localizar rapidamente a referência que você precisa.
+**Desafios:**
+```clojure
+(require 'challenges.order-processing :reload)
+(challenges.order-processing/demo-order-processing)
+
+;; Ou teste funções específicas:
+(challenges.order-processing/analyze-top-customers 
+  challenges.order-processing/sample-orders 3)
+```
+
+Adicione mais exemplos e desafios conforme aprender novos recursos. Manter os exemplos temáticos ajuda a localizar rapidamente a referência que você precisa.
